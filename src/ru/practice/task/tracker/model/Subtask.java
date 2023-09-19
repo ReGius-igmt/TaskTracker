@@ -47,7 +47,7 @@ public class Subtask extends Task {
 
     @Override
     public String toString() {
-        return String.format("Подзадача: id = %s, name = %s, description = %s, status = %s, epicId = %s",
-                super.getId(), super.getName(), super.getDescription(), super.getStatus(), epicId);
+        return String.format("Подзадача: id = %s, name = %s, description = %s, status = %s, epicId = %s, duration = %s, startTime = %s",
+                super.getId(), super.getName(), super.getDescription(), super.getStatus(), epicId, getDuration(), getStartTime());
     }
 }

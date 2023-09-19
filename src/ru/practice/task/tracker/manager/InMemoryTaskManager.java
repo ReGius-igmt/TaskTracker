@@ -181,7 +181,7 @@ public class InMemoryTaskManager implements TaskManager {
             if (t.getId() == checkTask.getId())
                 continue;
             if (checkTime(t, checkTask)) {
-                throw new ManagerValidateException("Задачи #" + t.getId() + " и #" + checkTask.getId() + "пересекаются");
+                throw new ManagerValidateException("Задачи #" + t.getId() + " и #" + checkTask.getId() + " пересекаются");
             }
         }
     }

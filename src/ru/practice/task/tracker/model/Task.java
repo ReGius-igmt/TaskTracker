@@ -23,7 +23,7 @@ public class Task {
         this.description = description;
         this.status = status;
         this.duration = duration;
-        this.startTime = startTime;
+        this.startTime = startTime.truncatedTo(ChronoUnit.SECONDS);
     }
 
     public LocalDateTime getEndTime() {

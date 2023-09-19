@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SuppressWarnings("unused")
 public abstract class TaskManagerTest<T extends TaskManager> {
-    protected final T taskManager;
+    protected T taskManager;
 
     protected TaskManagerTest(T taskManager) {
         this.taskManager = taskManager;
