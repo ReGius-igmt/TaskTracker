@@ -32,7 +32,7 @@ public class HTTPTaskManagerTest extends TaskManagerTest<HttpTaskManager> {
             server = new KVServer();
             server.start();
             taskManager = (HttpTaskManager) Managers.getDefault();
-        } catch (IOException | InterruptedException e) {
+        } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Ошибка при создании менеджера");
         }

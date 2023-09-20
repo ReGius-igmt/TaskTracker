@@ -43,16 +43,15 @@ public class KVServer {
 				h.close();
 				return;
 			}
-			if (data.get(key) == null) {
+			String response = data.get(key);
+			if (response == null) {
 				System.out.println("Не могу достать данные для ключа '" + key + "', данные отсутствуют");
 				h.sendResponseHeaders(404, 0);
 				h.close();
 				return;
 			}
-			String response = data.get(key);
 			sendText(h, response);
 			System.out.println("Значение для ключа " + key + " успешно отправлено в ответ на запрос!");
-			h.sendResponseHeaders(200, 0);
 		} else {
 			System.out.println("/load ждет GET-запрос, а получил: " + h.getRequestMethod());
 			h.sendResponseHeaders(405, 0);

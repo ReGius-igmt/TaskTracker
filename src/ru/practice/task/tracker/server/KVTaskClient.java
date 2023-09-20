@@ -41,7 +41,7 @@ public class KVTaskClient {
             HttpResponse<String> response = client.send(request,
                     HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8)
             );
-            if (response.statusCode() % 100 != 2) {
+            if (response.statusCode() != 200) {
                 System.out.println("Не удалось сохранить данные");
             }
         } catch (IOException | InterruptedException e) {
@@ -63,6 +63,9 @@ public class KVTaskClient {
             HttpResponse<String> response = client.send(request,
                     HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8)
             );
+            if (response.statusCode() != 200) {
+                throw new RuntimeException("Не удалось сохранить данные");
+            }
             return response.body();
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
